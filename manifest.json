@@ -1,0 +1,20 @@
+{
+  "manifest_version": 1,
+  "name": "unbeadable.",
+  "description": "Extension written in TypeScript",
+  "version": "1",
+  "author": "unbeadables",
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.amazon.de/*"
+      ],
+      "js": ["build/dist/main.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": [
+    "activeTab",
+    "declarativeContent"
+  ]
+}
