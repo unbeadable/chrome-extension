@@ -4,6 +4,7 @@
   "description": "",
   "scripts": {
     "build": "parcel build src/ts/main.ts -d build/dist/ -o main.js",
+    "watch": "parcel watch src/ts/main.ts -d build/dist/ -o main.js",
     "test": "jest",
     "lint": "tslint --project tsconfig.json --config tslint.json"
   },
@@ -15,8 +16,7 @@
     "tslint": "~5.11.0",
     "jest": "~23.5.0",
     "@types/jest": "~23.3.1",
-    "ts-jest": "~23.1.4",
-    "jest-fixtures": "^0.6.0"
+    "ts-jest": "~23.1.4"
   },
   "jest": {
     "moduleFileExtensions": [
