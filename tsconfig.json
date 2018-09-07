@@ -14,7 +14,7 @@
     "noUnusedLocals": true,
     "skipLibCheck": true,
     "noUnusedParameters": true,
-    "lib": ["es2015"]
+    "lib": ["es2015", "dom"]
 
   },
   "exclude": [
