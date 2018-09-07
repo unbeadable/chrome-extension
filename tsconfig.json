@@ -15,7 +15,6 @@
     "skipLibCheck": true,
     "noUnusedParameters": true,
     "lib": ["es2015"]
-
   },
   "exclude": [
     "node_modules",
