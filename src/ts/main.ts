@@ -73,3 +73,26 @@ if (!!searchInfoBar) {
         }).catch(() => console.log("Could not find asin."));
     });
 }
+
+const shoppingCartHeader = document.getElementsByClassName('a-row sc-cart-header sc-compact-bottom')[0];
+
+const getCartContents = () => {
+    return Array.from(document.getElementsByClassName('a-row sc-list-item sc-list-item-border sc-java-remote-feature'))
+        .filter(it => it.hasAttribute('data-asin'))
+};
+
+if (!!shoppingCartHeader) {
+    console.log("on shopping cart page.");
+    getCartContents()
+        .forEach(it => {
+            MicroplasticAsinLookup.lookup(it.getAttribute('data-asin')!).then((microplastics: string) => {
+                let anchor = it.getElementsByClassName('a-unordered-list a-nostyle a-vertical a-spacing-mini')[0];
+                const badgeContainer = document.createElement('div');
+                badgeContainer.style.width = '100%';
+                anchor.appendChild(badgeContainer);
+                new Badge(badgeContainer, true, microplastics);
+            }).catch(() => console.log("Could not find asin."));
+        });
+} else {
+    console.log("not on shopping cart page.");
+}
