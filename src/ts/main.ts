@@ -1,5 +1,5 @@
-import { ApiClient } from './ApiClient';
 import { Tooltip } from './Tooltip';
+import { MicroplasticsReader } from './MicroplasticsReader';
 
 const showToolTipHandler = (toolTip: Tooltip) => () => {
     toolTip.show()
@@ -8,6 +8,7 @@ const showToolTipHandler = (toolTip: Tooltip) => () => {
 const hideToolTipHandler = (toolTip: Tooltip) => () => {
     toolTip.hide()
 };
+const microplasticsReader = new MicroplasticsReader();
 
 const findAsin = () => {
     const labels: HTMLCollectionOf<Element> = document.getElementsByClassName('label');
@@ -29,11 +30,9 @@ const findAsin = () => {
 const ratingImage: HTMLElement = document.createElement('img');
 ratingImage.setAttribute('src', 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0%0D%0APSI0OCIgdmlld0JveD0iMCAwIDQ4IDQ4Ij48cGF0aCBkPSJNNDUuNDYgNDUuNDZMNS41NCA1LjU0%0D%0AIDQgNCAyLjU0IDIuNTQgMCA1LjA4bDguNzggOC43OCA0LjQyIDkuMzItMi43IDQuOWMtLjMyLjU2%0D%0ALS41IDEuMjItLjUgMS45MiAwIDIuMiAxLjggNCA0IDRoMTQuOTJsMi43NiAyLjc2Yy0xIC43My0x%0D%0ALjY2IDEuOTEtMS42NiAzLjI0IDAgMi4yIDEuNzggNCAzLjk4IDQgMS4zMyAwIDIuNTEtLjY3IDMu%0D%0AMjQtMS42OEw0Mi45MiA0OGwyLjU0LTIuNTR6TTE0Ljg0IDMwYy0uMjggMC0uNS0uMjItLjUtLjVs%0D%0ALjA2LS4yNEwxNi4yIDI2aDQuNzJsNCA0SDE0Ljg0em0xNi4yNi00YzEuNSAwIDIuODItLjgyIDMu%0D%0ANS0yLjA2bDcuMTYtMTIuOThjLjE2LS4yOC4yNC0uNjIuMjQtLjk2IDAtMS4xLS45LTItMi0ySDEz%0D%0ALjA4bDE4IDE4aC4wMnpNMTQgMzZjLTIuMiAwLTMuOTggMS44LTMuOTggNHMxLjc4IDQgMy45OCA0%0D%0AIDQtMS44IDQtNC0xLjgtNC00LTR6Ii8+PC9zdmc+');
 
-const apiClient = new ApiClient();
-
 const asin = findAsin();
 if (!!asin) {
-    apiClient.getDataForASIN(asin).then((response) => {
+    microplasticsReader.lookupMicroplasticsForAsin(asin).then((response: String) => {
         console.log(response);
 
         // send request to backend
