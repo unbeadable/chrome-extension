@@ -35,6 +35,9 @@ badgeText.innerText = 'This product contributes to the pollution of our oceans.'
 const tooltipContent = document.createElement('h2');
 tooltipContent.innerText = 'Help us keep the oceans clean!';
 
+const tooltipImage = document.createElement('img');
+tooltipImage.setAttribute('src', 'https://media.giphy.com/media/l4FGtZqkEJnw3V2lW/giphy.gif');
+
 const tooltipSpan: HTMLElement = document.createElement('span');
 tooltipSpan.setAttribute('class', 'tooltiptext');
 tooltipSpan.setAttribute('style', 'visibility: hidden;\n' +
@@ -42,15 +45,16 @@ tooltipSpan.setAttribute('style', 'visibility: hidden;\n' +
     '    background-color: white;\n' +
     '    color: #bc2525;\n' +
     '    text-align: center;\n' +
-    '    border: 1px solid #bc2525;\n' +
     '    border-radius: 5px;\n' +
-    '    padding: 5px 0;\n' +
+    '    padding: 15px;\n' +
     '    position: absolute;\n' +
     '    z-index: 1;\n' +
     '    top: 100%;\n' +
     '    left: 50%;\n' +
     '    margin-top: 5px;\n' +
-    '    margin-left: -125px;');
+    '    margin-left: -125px;\n' +
+    '    box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);');
+tooltipSpan.appendChild(tooltipImage);
 tooltipSpan.appendChild(tooltipContent);
 
 const asin = findAsin();
@@ -79,7 +83,8 @@ if (!!asin) {
             "    margin-top: 15px;\n" +
             "    background-color: #bc2525;" +
             "    position: relative;\n" +
-            "    display: inline-block;")
+            "    display: inline-block;\n" +
+            "    box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);")
 
     }).catch((error) => {
         console.log(`Did not receive information: ${error}`);
