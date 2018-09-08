@@ -30,7 +30,7 @@ const tagRecommendations = () => {
             badgeContainer.id = `reco-badge-${i}`;
             badgeContainer.style.width = '100%';
             element.appendChild(badgeContainer);
-            new Badge(badgeContainer, false)
+            new Badge(badgeContainer, false, "asin lookup result")
         }
     }
 
@@ -41,8 +41,8 @@ const microplasticAsinLookup = new MicroplasticAsinLookup();
 
 const asin = findAsin();
 if (!!asin) {
-    microplasticAsinLookup.lookup(asin).then(() => {
-        new Badge(document.getElementById('zeitgeistBadge_feature_div')!, true);
+    microplasticAsinLookup.lookup(asin).then((microplastics: string) => {
+        new Badge(document.getElementById('zeitgeistBadge_feature_div')!, true, microplastics);
     }).catch((error) => {
         console.log(`Did not receive information: ${error}`);
     });

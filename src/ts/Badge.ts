@@ -1,7 +1,7 @@
 
 export class Badge {
 
-    constructor(containerElement: HTMLElement, tooltipenabled: boolean) {
+    constructor(containerElement: HTMLElement, tooltipenabled: boolean, microplastics: string) {
         const badgeIcon: HTMLElement = document.createElement('img');
         badgeIcon.setAttribute('src', 'https://s3.eu-central-1.amazonaws.com/unbeadable/baseline-report-24px.svg');
         badgeIcon.setAttribute('style', 'flex: 0 0 24px;');
@@ -23,7 +23,7 @@ export class Badge {
 
         const tooltipTitle = document.createElement('p');
         tooltipTitle.setAttribute('style', 'font-weight: bold;');
-        tooltipTitle.innerText = 'This product contains Microplastic!';
+        tooltipTitle.innerText = `This product contains the following Microplastic(s):\n${microplastics}`;
 
         const tooltipDescription = document.createElement('p');
         tooltipDescription.innerText = 'Microplastic pollution affects sea life in numerous ways. It destroys ecosystems, changes the behaviour of species in the sea by affecting their brain, and increases mortality rates of the species.';
