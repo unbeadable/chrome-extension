@@ -45,13 +45,13 @@ if (!!asin) {
 
         const badgeWrapper: HTMLElement | null = document.getElementById('zeitgeistBadge_feature_div');
         badgeWrapper!.appendChild(badge);
-        badgeWrapper!.setAttribute("style", "border: 1px solid red;\n" +
+        badgeWrapper!.setAttribute("style", "border: 1px solid #bc2525;\n" +
             "    border-radius: 5px;\n" +
-            "    padding: 2px;\n" +
-            "    max-width: 300px;\n" +
+            "    padding: 4px;\n" +
+            "    max-width: 250px;\n" +
             "    margin-bottom: 15px;\n" +
             "    margin-top: 15px;\n" +
-            "    background-color: red;")
+            "    background-color: #bc2525;")
 
     }).catch( (error) => {
         console.log(`Did not receive information: ${error}`);
