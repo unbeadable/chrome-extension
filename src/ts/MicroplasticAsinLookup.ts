@@ -1,6 +1,6 @@
 export class MicroplasticAsinLookup {
 
-    asins = new Map([["B071WPQNZS", "Polymethyl Methacrylate"],
+    static asins = new Map([["B071WPQNZS", "Polymethyl Methacrylate"],
         ["B07FB1KRCW", "styrene/acrylates copolymer"],
         ["B012BNT53Q", "Styrene/Acrylates Copolymer"],
         ["B00N0AG844", "styrene/acrylates copolymer"],
@@ -4467,8 +4467,7 @@ export class MicroplasticAsinLookup {
         ["B00TE2CF94", "Polyacrylate-4"],
         ["B00YTHA712", "Polyurethane-35"]]);
 
-
-    async lookup(asin: string): Promise<string> {
+   static async lookup(asin: string): Promise<string> {
         return this.asins.has(asin) ? Promise.resolve(this.asins.get(asin)!) : Promise.reject("asin not found");
     }
 }

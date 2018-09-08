@@ -24,24 +24,26 @@ const tagRecommendations = () => {
 
     for (let i = 0; i < length; i++) {
         let element: HTMLElement = recommendationCards.item(i) as HTMLElement;
+        let parse = JSON.parse(element.getElementsByTagName('div')[0].getAttribute('data-p13n-asin-metadata') as string);
 
-        if ("should we tag this?") {
+        MicroplasticAsinLookup.lookup(parse.asin).then(() => {
             let badgeContainer = document.createElement('div');
             badgeContainer.id = `reco-badge-${i}`;
             badgeContainer.style.width = '100%';
             element.appendChild(badgeContainer);
             new Badge(badgeContainer, false, "asin lookup result")
-        }
+        }).catch((error) => {
+            console.log(`Did not receive information: ${error}`);
+        });
     }
 
     return
 };
 
-const microplasticAsinLookup = new MicroplasticAsinLookup();
 
 const asin = findAsin();
 if (!!asin) {
-    microplasticAsinLookup.lookup(asin).then((microplastics: string) => {
+    MicroplasticAsinLookup.lookup(asin).then((microplastics: string) => {
         new Badge(document.getElementById('zeitgeistBadge_feature_div')!, true, microplastics);
     }).catch((error) => {
         console.log(`Did not receive information: ${error}`);
