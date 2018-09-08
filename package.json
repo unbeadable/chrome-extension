@@ -1,6 +1,6 @@
 {
   "name": "unbeadable.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "scripts": {
     "build": "parcel build src/ts/main.ts -d build/dist/ -o main.js && parcel build src/ts/searchResults.ts -d build/dist/ -o searchResults.js",
