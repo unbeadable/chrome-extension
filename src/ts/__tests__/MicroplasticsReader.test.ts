@@ -1,9 +1,9 @@
-import {MicroplasticsReader} from '../MicroplasticsReader';
+import {MicroplasticAsinLookup} from '../MicroplasticAsinLookup';
 
-describe('MicroplasticsReader', () => {
+describe('MicroplasticAsinLookup', () => {
     it('should do stuff', async () => {
-        const microplasticsReader = new MicroplasticsReader();
-        const result = await microplasticsReader.lookupMicroplasticsForAsin('test');
+        const microplasticsReader = new MicroplasticAsinLookup();
+        const result = await microplasticsReader.lookup('test');
 
         expect(result).toBe('Polyethylene');
     });

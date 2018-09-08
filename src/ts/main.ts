@@ -1,4 +1,4 @@
-import { MicroplasticsReader } from './MicroplasticsReader';
+import { MicroplasticAsinLookup } from './MicroplasticAsinLookup';
 
 const findAsin = () => {
     const labels: HTMLCollectionOf<Element> = document.getElementsByClassName('label');
@@ -17,7 +17,7 @@ const findAsin = () => {
     return null;
 };
 
-const microplasticsReader = new MicroplasticsReader();
+const microplasticAsinLookup = new MicroplasticAsinLookup();
 
 const badgeIcon: HTMLElement = document.createElement('img');
 badgeIcon.setAttribute('src', 'https://s3.eu-central-1.amazonaws.com/unbeadable/baseline-report-24px.svg');
@@ -68,9 +68,7 @@ tooltipSpan.appendChild(subline);
 
 const asin = findAsin();
 if (!!asin) {
-    microplasticsReader.lookupMicroplasticsForAsin(asin).then((response: String) => {
-        console.log(response);
-
+    microplasticAsinLookup.lookup(asin).then(() => {
         const badge: HTMLElement = document.createElement('div');
         badge.id = 'unbeadable';
         badge.setAttribute('style', 'display: flex;');
