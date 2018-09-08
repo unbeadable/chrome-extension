@@ -10,7 +10,7 @@ const findAsin = () => {
         if (!!nextElementSibling) {
             return nextElementSibling.innerHTML
         }
-    }fi
+    }
 
     return null;
 };
