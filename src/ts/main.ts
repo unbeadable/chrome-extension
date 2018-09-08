@@ -2,18 +2,15 @@ import { MicroplasticAsinLookup } from './MicroplasticAsinLookup';
 import {Badge} from './Badge';
 
 const findAsin = () => {
-    const labels: HTMLCollectionOf<Element> = document.getElementsByClassName('label');
-    const length = labels.length;
+    const asinLabel = Array.from(document.getElementsByClassName('label'))
+        .find(it => it.innerHTML == "ASIN");
 
-    for (let i = 0; i < length; i++) {
-        let element: Element = labels.item(i);
-
-        if (element.innerHTML == "ASIN") {
-            const asin = (element.nextSibling as Element).innerHTML;
-            console.log(asin);
-            return asin;
+    if (!!asinLabel) {
+        const nextElementSibling = asinLabel.nextElementSibling;
+        if (!!nextElementSibling) {
+            return nextElementSibling.innerHTML
         }
-    }
+    }fi
 
     return null;
 };
@@ -23,11 +20,11 @@ const tagRecommendations = () => {
     const length = recommendationCards.length;
 
     for (let i = 0; i < length; i++) {
-        let element: HTMLElement = recommendationCards.item(i) as HTMLElement;
-        let parse = JSON.parse(element.getElementsByTagName('div')[0].getAttribute('data-p13n-asin-metadata') as string);
+        const element: HTMLElement = recommendationCards.item(i) as HTMLElement;
+        const parse = JSON.parse(element.getElementsByTagName('div')[0].getAttribute('data-p13n-asin-metadata') as string);
 
         MicroplasticAsinLookup.lookup(parse.asin).then(() => {
-            let badgeContainer = document.createElement('div');
+            const badgeContainer = document.createElement('div');
             badgeContainer.id = `reco-badge-${i}`;
             badgeContainer.style.width = '100%';
             element.appendChild(badgeContainer);
