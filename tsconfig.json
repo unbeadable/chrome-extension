@@ -14,7 +14,7 @@
     "noUnusedLocals": true,
     "skipLibCheck": true,
     "noUnusedParameters": true,
-    "lib": ["es2015", "dom", "es2016.array.include"]
+    "lib": ["es2015", "dom", "es2016.array.include", "es2015.collection"]
 
   },
   "exclude": [
