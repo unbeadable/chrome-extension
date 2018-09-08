@@ -40,13 +40,36 @@ const tagRecommendations = () => {
 
 const asin = findAsin();
 if (!!asin) {
+    console.log("on product page");
     MicroplasticAsinLookup.lookup(asin).then((microplastics: string) => {
         new Badge(document.getElementById('zeitgeistBadge_feature_div')!, true, microplastics);
     }).catch((error) => {
         console.log(`Did not receive information: ${error}`);
     });
+
+    tagRecommendations();
 } else {
     console.log("Could not find ASIN.");
 }
 
-tagRecommendations();
+const searchInfoBar = document.getElementById('s-result-info-bar-content');
+
+
+const getSearchResults = () => {
+    return Array.from(document.getElementsByTagName('li'))
+        .filter(it => it.hasAttribute('data-asin'))
+};
+
+if (!!searchInfoBar) {
+    console.log("on search page.");
+    getSearchResults()
+        .forEach(it => {
+        MicroplasticAsinLookup.lookup(it.getAttribute('data-asin')!).then((microplastics: string) => {
+            let anchor = it.getElementsByClassName('a-row a-spacing-base')[0];
+            const badgeContainer = document.createElement('div');
+            badgeContainer.style.width = '100%';
+            anchor.appendChild(badgeContainer);
+            new Badge(badgeContainer, false, microplastics);
+        }).catch(() => console.log("Could not find asin."));
+    });
+}

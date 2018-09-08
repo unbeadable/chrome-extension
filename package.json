@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build": "parcel build src/ts/main.ts -d build/dist/ -o main.js",
-    "watch": "parcel watch src/ts/main.ts -d build/dist/ -o main.js",
+    "build": "parcel build src/ts/main.ts -d build/dist/ -o main.js && parcel build src/ts/searchResults.ts -d build/dist/ -o searchResults.js",
+    "watch": "parcel watch src/ts/main.ts -d build/dist/ -o main.js && parcel build src/ts/searchResults.ts -d build/dist/ -o searchResults.js",
     "test": "jest",
     "lint": "tslint --project tsconfig.json --config tslint.json"
   },
