@@ -43,7 +43,7 @@ tooltipTitle.setAttribute('style', 'font-weight: bold;');
 tooltipTitle.innerText = 'This product contains Microplastic!';
 
 const tooltipDescription = document.createElement('p');
-tooltipDescription.innerText = 'Microplastic pollution affects on sea life in numerous ways. It destroys ecosystems, changes the behaviour of species in the sea by affecting their brain and increases mortality rates of the species.';
+tooltipDescription.innerText = 'Microplastic pollution affects sea life in numerous ways. It destroys ecosystems, changes the behaviour of species in the sea by affecting their brain, and increases mortality rates of the species.';
 
 const tooltipSpan: HTMLElement = document.createElement('span');
 tooltipSpan.setAttribute('class', 'tooltiptext');
