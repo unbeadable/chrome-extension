@@ -10,7 +10,7 @@
         "*://*.amazon.de/*"
       ],
       "js": ["build/dist/main.js"],
-      "run_at": "document_end"
+      "run_at": "document_idle"
     }
   ],
   "permissions": [
