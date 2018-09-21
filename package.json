@@ -3,20 +3,22 @@
   "version": "1.0.1",
   "description": "",
   "scripts": {
-    "build": "parcel build src/ts/main.ts -d build/dist/ -o main.js && parcel build src/ts/searchResults.ts -d build/dist/ -o searchResults.js",
-    "watch": "parcel watch src/ts/main.ts -d build/dist/ -o main.js && parcel build src/ts/searchResults.ts -d build/dist/ -o searchResults.js",
+    "build": "parcel build src/old/ts/main.ts -d build/dist/ -o main.js && parcel build src/ts/searchResults.ts -d build/dist/ -o searchResults.js",
+    "watch": "parcel watch src/old/ts/main.ts -d build/dist/ -o main.js && parcel build src/ts/searchResults.ts -d build/dist/ -o searchResults.js",
     "test": "jest",
-    "lint": "tslint --project tsconfig.json --config tslint.json"
+    "lint": "tslint --project tsconfig.json --config tslint.json",
+    "pretty": "prettier --write 'src/ts/**/*.ts'"
   },
   "author": "unbeadables.",
   "license": "ISC",
   "devDependencies": {
-    "parcel-bundler": "~1.9.7",
-    "typescript": "~3.0.3",
-    "tslint": "~5.11.0",
-    "jest": "~23.5.0",
     "@types/jest": "~23.3.1",
-    "ts-jest": "~23.1.4"
+    "jest": "~23.5.0",
+    "parcel-bundler": "~1.9.7",
+    "prettier": "1.14.2",
+    "ts-jest": "~23.1.4",
+    "tslint": "~5.11.0",
+    "typescript": "~3.0.3"
   },
   "jest": {
     "moduleFileExtensions": [

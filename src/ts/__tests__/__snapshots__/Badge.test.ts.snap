@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Badge should match snapshot 1`] = `
+<div
+  class="unbdbl-badge unbdbl-primary-text"
+>
+  <img
+    class="unbdbl-badge-icon"
+    src="https://s3.eu-central-1.amazonaws.com/unbeadable/baseline-report-24px.svg"
+  />
+  <span
+    class="unbdbl-primary-text"
+  />
+</div>
+`;

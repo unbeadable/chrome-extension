@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "unbeadable.",
-  "description": "Extension written in TypeScript",
+  "description": "Easily check if the products you are buying from Amazon contain microplastics.",
   "version": "2",
   "author": "unbeadables",
   "icons": {
@@ -15,6 +15,7 @@
         "*://*.amazon.de/*"
       ],
       "js": ["build/dist/main.js"],
+      "css": ["src/css/main.css"],
       "run_at": "document_idle"
     }
   ],

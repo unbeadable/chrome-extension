@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`main should attach badge to target host div when page has ASIN info 1`] = `"<div class=\\"unbdbl-badge unbdbl-primary-text\\"><img src=\\"https://s3.eu-central-1.amazonaws.com/unbeadable/baseline-report-24px.svg\\" class=\\"unbdbl-badge-icon\\"><span class=\\"unbdbl-primary-text\\"></span></div>"`;
+
+exports[`main should keep HTML as is when page does not have ASIN info 1`] = `""`;
