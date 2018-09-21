@@ -1,12 +1,5 @@
 import { BadgeIcon } from "./BadgeIcon";
-
-const badgeText: () => HTMLElement = () => {
-  const element = document.createElement("span");
-  element.setAttribute("class", "unbdbl-primary-text");
-  element.innerText =
-    "This product contributes to the pollution of our oceans.";
-  return element;
-};
+import { Text } from "./Text";
 
 export class Badge {
   readonly element: HTMLElement = document.createElement("div");
@@ -14,6 +7,7 @@ export class Badge {
   constructor() {
     this.element.setAttribute("class", "unbdbl-badge unbdbl-primary-text");
     this.element.appendChild(new BadgeIcon().element);
-    this.element.appendChild(badgeText());
+    const label = "This product contributes to the pollution of our oceans.";
+    this.element.appendChild(new Text(label, "unbdbl-primary-text").element);
   }
 }

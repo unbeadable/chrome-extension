@@ -1,0 +1,25 @@
+.unbdbl-badge {
+    display: flex;
+    border: 1px solid #bc2525;
+    background-color: #bc2525;
+    border-radius: 5px;
+    padding: 4px;
+    width: 100%;
+    max-width: 250px;
+    box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 15px;
+    position: relative;
+    margin-top: 15px;
+}
+
+.unbdbl-primary-text {
+    flex: 1;
+    color: white;
+    font-size: 13px;
+    line-height: normal;
+    padding-left: 5px;
+}
+
+.unbdbl-badge-icon {
+    flex: 0 0 24px;
+}
