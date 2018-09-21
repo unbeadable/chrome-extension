@@ -6,6 +6,7 @@
     "build": "parcel build src/old/ts/main.ts -d build/dist/ -o main.js && parcel build src/ts/searchResults.ts -d build/dist/ -o searchResults.js",
     "watch": "parcel watch src/old/ts/main.ts -d build/dist/ -o main.js && parcel build src/ts/searchResults.ts -d build/dist/ -o searchResults.js",
     "test": "jest",
+    "tdd": "jest --watch",
     "lint": "tslint --project tsconfig.json --config tslint.json",
     "pretty": "prettier --write 'src/ts/**/*.ts'"
   },

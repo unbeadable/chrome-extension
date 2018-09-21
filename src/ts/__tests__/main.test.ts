@@ -1,8 +1,8 @@
 import { render } from "../main";
 
 describe("main", () => {
-  const hostDivId = "zeitgeistBadge_feature_div";
-  const hostDivHtml: String = `<div id="${hostDivId}"></div>`;
+  const hostDivId: string = "zeitgeistBadge_feature_div";
+  const hostDivHtml: string = `<div id="${hostDivId}"></div>`;
   const asinInfo =
     '<table><tr><td class="label">ASIN</td><td class="value">B001LQCCDK</td></tr></table>';
 
@@ -11,7 +11,7 @@ describe("main", () => {
 
     render();
 
-    const hostDiv: HTMLElement = document.getElementById(hostDivId);
+    const hostDiv: HTMLElement = document.getElementById(hostDivId)!!;
     expect(hostDiv.innerHTML).toMatchSnapshot();
   });
 
@@ -20,7 +20,7 @@ describe("main", () => {
 
     render();
 
-    const hostDiv: HTMLElement = document.getElementById(hostDivId);
+    const hostDiv: HTMLElement = document.getElementById(hostDivId)!!;
     expect(hostDiv.innerHTML).toMatchSnapshot();
   });
 });
