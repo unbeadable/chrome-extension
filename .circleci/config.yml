@@ -1,15 +1,15 @@
 version: 2
 jobs:
   build:
-     docker:
-        - image: cypress/base:8
+    docker:
+      - image: cypress/base:8
 
-      working_directory: ~/chrome-extension
-      steps:
-        - checkout
-        - run:
-            name: Test
-            command: npm run test
+    working_directory: ~/chrome-extension
+    steps:
+      - checkout
+      - run:
+          name: Test
+          command: npm run test
 
 workflows:
   version: 2
