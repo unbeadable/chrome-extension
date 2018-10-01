@@ -45,4 +45,6 @@ workflows:
   build:
     jobs:
       - npm-cache
-      - build
+      - build:
+          requires:
+            - npm-cache
